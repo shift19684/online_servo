@@ -1,0 +1,107 @@
+<html lang="ja">
+	<head>
+	</head>
+	<body>
+		<center>
+			<h1>
+				DxI in-bound Settings : App to DxI
+			</h1>
+			<hr>
+			<form name="formParam" action="/" method="post">
+				Delay
+				<select name="delay" id="delay">
+					<option id="delay0s" value="delay0s">D:      0ms</option>
+					<option id="delay1ds" value="delay1ds">D:  100ms</option>
+					<option id="delay2ds" value="delay2ds">D:  200ms</option>
+					<option id="delay4ds" value="delay4ds">D:  400ms</option>
+					<option id="delay5ds" value="delay5ds">D:  500ms</option>
+					<option id="delay6ds" value="delay6ds">D:  600ms</option>
+					<option id="delay8ds" value="delay8ds">D:  800ms</option>
+					<option id="delay1s" value="delay1s">D:  1,000ms</option>
+					<option id="delay2s" value="delay2s">D:  2,000ms</option>
+					<option id="delay3s" value="delay3s">D:  3,000ms</option>
+					<option id="delay4s" value="delay4s">D:  4,000ms</option>
+					<option id="delay5s" value="delay5s">D:  5,000ms</option>
+					<option id="delay6s" value="delay6s">D:  6,000ms</option>
+					<option id="delay7s" value="delay7s">D:  7,000ms</option>
+					<option id="delay8s" value="delay8s">D:  8,000ms</option>
+					<option id="delay9s" value="delay9s">D:  9,000ms</option>
+					<option id="delay10s" value="delay10s">D: 10,000ms</option>
+					<option id="delay11s" value="delay11s">D: 11,000ms</option>
+					<option id="delay12s" value="delay12s">D: 12,000ms</option>
+					<option id="delay13s" value="delay13s">D: 13,000ms</option>
+					<option id="delay14s" value="delay14s">D: 14,000ms</option>
+					<option id="delay15s" value="delay15s">D: 15,000ms</option>
+					<option id="delay16s" value="delay16s">D: 16,000ms</option>
+					<option id="delay17s" value="delay17s">D: 17,000ms</option>
+					<option id="delay18s" value="delay18s">D: 18,000ms</option>
+					<option id="delay19s" value="delay19s">D: 19,000ms</option>
+					<option id="delay20s" value="delay20s">D: 20,000ms</option>
+					<option id="delay21s" value="delay21s">D: 21,000ms</option>
+					<option id="delay22s" value="delay22s">D: 22,000ms</option>
+					<option id="delay23s" value="delay23s">D: 23,000ms</option>
+					<option id="delay24s" value="delay24s">D: 24,000ms</option>
+					<option id="delay25s" value="delay25s">D: 25,000ms</option>
+					<option id="delay26s" value="delay26s">D: 26,000ms</option>
+					<option id="delay27s" value="delay27s">D: 27,000ms</option>
+					<option id="delay28s" value="delay28s">D: 28,000ms</option>
+					<option id="delay29s" value="delay29s">D: 29,000ms</option>
+					<option id="delay30s" value="delay30s">D: 30,000ms</option>
+					<option id="delay40s" value="delay40s">D: 40,000ms</option>
+					<option id="delay50s" value="delay50s">D: 50,000ms</option>
+					<option id="delay60s" value="delay60s">D: 60,000ms</option>
+					<option id="delay70s" value="delay70s">D: 70,000ms</option>
+					<option id="delay80s" value="delay80s">D: 80,000ms</option>
+					<option id="delay90s" value="delay90s">D: 90,000ms</option>
+				</select>
+				<br>
+                <br>
+                <br>
+				Loss & Duplicate
+				<select name="loss" id="loss">
+					<option id="lossLess" value="lossLess">None 0%</option>
+					<option id="lossLow" value="lossLow">Low 3%</option>
+					<option id="lossMiddle" value="lossMiddle">Middle 10%</option>
+					<option id="lossHigh" value="lossHigh">High 30%</option>
+                    <option id="lossHigher" value="lossHigher">Higher 40%</option>
+                    <option id="lossHuge" value="lossHuge">Huge 60%</option>
+				</select>
+				<br>
+                <br>
+                <br>
+				Communication
+				<select name="comm" id="comm">
+					<option value="commNone" selected>None</option>
+					<option value="commStop">Stop</option>
+					<option value="commRecover">Recover</option>
+				</select>
+				<br>
+                <br>
+                <br>
+				Other Controll
+				<select name="controll" id="controll">
+					<option value="controllNone" selected>None</option>
+					<option value="controllReboot">Reboot</option>
+					<option value="controllShutdown">Shutdown</option>
+				</select>
+				<br>
+                <br>
+                <br>
+				<input type="submit" value="Set">
+				<br>
+                <br>
+                <br>
+			</form>
+		</center>
+	</body>
+	<script language="javascript">
+	window.onload = function(){
+		elmDelay = document.getElementById("delay");
+		elmLoss = document.getElementById("loss");
+		elmComm = document.getElementById("comm");
+		elmDelay.options["{{ DelayValue }}"].selected = true;
+		elmLoss.options["{{ LossValue }}"].selected = true;
+		elmComm.options["{{ CommValue }}"].selected = true;
+	}
+	</script>
+</html>
